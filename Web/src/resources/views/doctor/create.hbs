@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <a class="nav-link nav justify-content-center" href="/doctor/information">
+    <img src="../../public/img/benhnhan.jpg" alt="Avatar" class="rounded-circle" style="width: 30px;">
+  </a>
+
+  <div style="color: white;">
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      {{!-- <li class="nav-item">
+          <a class="nav-link" href="/patient/create_record">Khám bệnh</a>
+      </li><li class="nav-item"> --}}
+      </li><li class="nav-item">
+          <a class="nav-link" href="/patient/list_record">Bệnh án</a>
+      </ul>
+  </div>
+</nav>
+<div>
+  <h1>Thông tin bệnh nhân</h1>
+  <div class="container mt-5">
+          <div class="col-md-6">
+              <ul class="list-group">
+                  <li class="list-group-item"><strong>First Name:</strong> {{this.Userfirstname}}</li>
+                  <li class="list-group-item"><strong>Last Name:</strong> {{this.Userlastname}}</li>
+                  <li class="list-group-item"><strong>Date of Birth:</strong> {{this.Date}}</li>
+                  <li class="list-group-item"><strong>CCCD:</strong> {{this.CCCD}}</li>
+                  <li class="list-group-item"><strong>Address:</strong> {{this.Useradress}}</li>
+                  <li class="list-group-item"><strong>Phone:</strong> {{this.Userphone}}</li>
+                  <li class="list-group-item"><strong>Sex:</strong> {{this.Sex}}</li>
+              </ul>
+          </div>
+      </div>
+<form action="/doctor/store" method="post">
+  <label for="Requestexa">Yêu cầu xét nghiệm</label>
+  <select id="Requestexa" name="Requestexa" multiple>
+    <option value="Eye">Máu</option>
+    <option value="E-N-T">Nước tiểu</option>
+  </select><br>
+
+  <label for="name">Kết luận</label>
+  <input type="text" name="Result" id="Result"><br>
+  <div>
+    <h1>Đơn thuốc</h1>
+    <div class="container mt-4">
+        <button class="btn btn-primary" id="addMedicineBtn">Thêm Thuốc</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="medicineModal" tabindex="-1" aria-labelledby="medicineModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="medicineModalLabel">Thêm Thuốc</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="stt">STT:</label>
+                            <input type="text" class="form-control" id="stt">
+                        </div>
+                        <div class="form-group">
+                            <label for="tenThuoc">Tên Thuốc:</label>
+                            <input type="text" class="form-control" id="tenThuoc">
+                        </div>
+                        <div class="form-group">
+                            <label for="soLuong">Số Lượng:</label>
+                            <select class="form-control" id="soLuong">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="lieuLuong">Liều Lượng:</label>
+                            <select class="form-control" id="lieuLuong">
+                                <option>5mg</option>
+                                <option>10mg</option>
+                                <option>20mg</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="saveMedicineBtn">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div>
+    <h4>Bác sĩ</h1>
+    <p>Nguyễn Văn A</p>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,31 @@
+
+{{!-- Lấy dữ liệu cá nhân --}}
+<div>
+
+</div>
+
+<form method="post" action="/patient/store">
+    <h3>Thông tin khám bệnh</h3>
+    {{!-- Lần khám thứ --}}
+      
+    {{!-- Triệu chứng --}}
+    <div class="form-group">
+      <label for="Symptom">Triệu chứng</label>
+      <input type="text" class="form-control" id="Symption" name="Symption">
+    </div>
+    {{!-- Tiền sử bệnh --}}
+    <div class="form-group">
+      <label for="Anamnesis">Tiền sử bệnh</label>
+      <input type="text" class="form-control" id="Anamnesis" name="Anamnesis">
+    </div>
+    {{!-- Yêu cầu khám --}}
+    <div class="form-group">
+      <label for="Reqquest">Yêu cầu khám</label>
+      <select id="Request" name="Request">
+        <option selected> Lựa chọn khoa... </option>
+        <option value="Eye">Mắt</option>
+        <option value="E-N-T">Tai mũi họng</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

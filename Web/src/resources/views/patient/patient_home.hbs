@@ -1,0 +1,18 @@
+{{#if records.length}}
+    {{#each records}}
+        {{#if @last}}
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title"><strong>PHÒNG: {{this.RoomID}}</strong>S</h3>
+                    <h6 class="card-text">      {{this.Decription}}</h6>
+                    <h3 class="card-title"><strong>Yêu cầu khám:</strong> {{this.RoomID}}</h3>
+                    <h3 class="card-title"><strong>Bác sĩ:</strong> {{this.RoomID}}</h3>
+                    <h6 class="card-text">      {{this.Decription}}</h6>
+                    <h3 class="card-text"><strong>Ghi chú:</strong> <h6>{{this.Note}}</h6></h3>
+                </div>
+            </div>
+        {{/if}}
+    {{/each}}
+{{else}}
+    <p>Không có bản ghi nào.</p>
+{{/if}}
