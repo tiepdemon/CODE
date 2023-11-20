@@ -1,0 +1,11 @@
+
+{
+  "files.associations": {
+    "*.c": "cpp",
+    "*.cpp": "cpp"
+  },
+  "code-runner.executorMap": {
+    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+  },
+  "terminal.integrated.shellArgs.windows": ["-NoExit", "/c", "chcp.com 65001"]
+}
